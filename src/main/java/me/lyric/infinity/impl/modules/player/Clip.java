@@ -40,8 +40,8 @@ public class Clip extends Module {
 
         if (SpeedUtil.anyMovementKeys())
         {
-           toggle();
-           return;
+            toggle();
+            return;
         }
         if (mode.getValue() == Mode.CORNER)
         {
@@ -75,14 +75,15 @@ public class Clip extends Module {
         return String.valueOf(disableTime);
     }
 
-
-
-
-    public static double roundToClosest(double num, double low, double high) {
-        double d2 = high - num;
-        double d1 = num - low;
-        return (d2 > d1 ? low : high);
+    private double roundToClosest(final double num, final double low, final double high) {
+        final double d1 = num - low;
+        final double d2 = high - num;
+        if (d2 > d1) {
+            return low;
+        }
+        return high;
     }
+
     private enum Mode
     {
         CORNER,

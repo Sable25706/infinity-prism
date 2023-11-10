@@ -31,7 +31,7 @@ public class Arrow extends Module {
 
     public Setting<Bind> cyclebind = register(new Setting<>("Cycle-Bind", "Bind to instantly cycle arrows.", new Bind()));
 
-    public Setting<Integer> cycle = register(new Setting<>("Cycle-Time", "Time taken to cycle an arrow type.", 200, 0, 500));
+    public Setting<Integer> cycle = register(new Setting<>("Cycle-Time", "Time taken to cycle an arrow type.", 200, 0, 5000));
 
     public Arrow()
     {
